@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+target/
+Cargo.lock
+
+# Build outputs
+docs/book/book-output/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+coverage/
+
+# Temporary files
+tmp/
+temp/

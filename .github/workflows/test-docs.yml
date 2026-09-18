@@ -1,0 +1,56 @@
+name: Test Documentation
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'docs/**'
+  pull_request:
+    branches:
+      - '**'
+    paths:
+      - 'docs/**'
+
+jobs:
+  test:
+    name: Test Documentation Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Install mdBook
+        run: cargo install mdbook --locked
+
+      - name: Test links
+        working-directory: docs/book
+        run: mdbook test
+
+  build:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Install mdBook
+        run: cargo install mdbook --locked
+
+      - name: Build mdBook
+        working-directory: docs/book
+        run: mdbook build
