@@ -25,6 +25,3 @@ enable = true
 
 [output.epub]
 optional = true
-
-[build]
-build-dir = "book-output"
