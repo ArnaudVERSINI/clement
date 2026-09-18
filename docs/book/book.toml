@@ -27,4 +27,4 @@ enable = true
 optional = true
 
 [build]
-build-dir = "../book-output"
+build-dir = "book-output"
