@@ -54,7 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book-output/html
+          path: docs/book/book-output/html
 
   deploy:
     name: Deploy to GitHub Pages
